@@ -1,0 +1,4 @@
+.git
+supabase
+.env.local
+*.log

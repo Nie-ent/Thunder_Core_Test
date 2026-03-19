@@ -1,0 +1,34 @@
+# supabase/config.toml
+
+project_id = "thunder-os-local"
+
+[api]
+port = 54321
+# เปิดให้ API มองเห็น schema เพิ่มเติมเผื่ออนาคตเราแยก schema ตามแอป
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+port = 54323
+
+# ตั้งค่า Auth ให้เหมาะกับการ Development
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+# ปิดการยืนยันอีเมลไปก่อน จะได้สร้าง User เทสได้รวดเร็ว
+enable_confirmations = false
+double_confirm_changes = false
+enable_signup = true
+
+[core]
+# ข้ามไปก่อนสำหรับ POC
