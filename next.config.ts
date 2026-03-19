@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   turbopack: {
     resolveAlias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(process.cwd(), "src"),
     },
   },
   async headers() {
